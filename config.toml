@@ -1,0 +1,86 @@
+[default_urls.aggregators]
+"https://aggregator.walrus-testnet.walrus.space"              = true
+"https://wal-aggregator-testnet.staketab.org"                 = true
+"https://walrus-testnet-aggregator.bartestnet.com"            = true
+"https://walrus-testnet.blockscope.net"                       = true
+"https://walrus-testnet-aggregator.nodes.guru"                = true
+"https://walrus-cache-testnet.overclock.run"                  = true
+"https://walrus-testnet-aggregator.stakin-nodes.com"          = true
+"https://testnet-aggregator-walrus.kiliglab.io"               = true
+"https://walrus-cache-testnet.latitude-sui.com"               = true
+"https://walrus-testnet-aggregator.nodeinfra.com"             = true
+"https://walrus-testnet.stakingdefenseleague.com"             = true
+"https://walrus-aggregator.rubynodes.io"                      = true
+"https://walrus-testnet-aggregator.brightlystake.com"         = true
+"https://walrus-testnet-aggregator.nami.cloud"                = true
+"https://testnet.walrus-publisher.sm.xyz"                     = true
+"https://walrus-testnet-aggregator.stakecraft.com"            = true
+"https://agg.test.walrus.eosusa.io"                           = true
+"https://walrus-agg.testnet.obelisk.sh"                       = true
+"https://sui-walrus-testnet.bwarelabs.com/aggregator"         = true
+"https://walrus-testnet.chainbase.online/aggregator"          = true
+"https://walrus-tn.juicystake.io:9443"                        = true
+"https://walrus-agg-testnet.chainode.tech:9002"               = true
+"https://walrus-testnet-aggregator.starduststaking.com:11444" = true
+"http://walrus-testnet-aggregator.everstake.one:9000"         = true
+"http://walrus.testnet.pops.one:9000"                         = true
+"http://scarlet-brussels-376c2.walrus.bdnodes.net:9000"       = true
+"http://aggregator.testnet.sui.rpcpool.com:9000"              = true
+"http://walrus.krates.ai:9000"                                = true
+"https://walrus.sui.thepassivetrust.com"                      = true
+"http://walrus.globalstake.io:9000"                           = true
+"http://walrus-testnet-aggregator.natsai.xyz:9000"            = true
+"http://walrus-testnet.staking4all.org:9000"                  = true
+"http://93.115.27.108:9000"                                   = true
+"http://65.21.139.112:9000"                                   = true
+"http://92.42.106.241:9000"                                   = true
+"http://162.19.18.19:9000"                                    = true
+"https://walrus.testnet.aggregator.stakepool.dev.br"          = true
+"https://aggregator.walrus.banansen.dev"                      = true
+
+[default_urls.caches]
+
+[default_urls.publishers]
+"https://publisher.walrus-testnet.walrus.space"               = true
+"https://wal-publisher-testnet.staketab.org"                  = true
+"https://walrus-testnet-publisher.bartestnet.com"             = true
+"https://walrus-testnet-publisher.nodes.guru"                 = true
+"https://walrus-testnet-publisher.stakin-nodes.com"           = true
+"https://testnet-publisher-walrus.kiliglab.io"                = true
+"https://walrus-testnet-publisher.nodeinfra.com"              = true
+"https://walrus-publisher.rubynodes.io"                       = true
+"https://walrus-testnet-publisher.brightlystake.com"          = true
+"https://walrus-testnet-publisher.nami.cloud"                 = true
+"https://testnet.walrus-publisher.sm.xyz"                     = true
+"https://walrus-testnet-publisher.stakecraft.com"             = true
+"https://pub.test.walrus.eosusa.io"                           = true
+"https://walrus-pub.testnet.obelisk.sh"                       = true
+"https://sui-walrus-testnet.bwarelabs.com/publisher"          = true
+"https://walrus-testnet.chainbase.online/publisher"           = true
+"https://walrus-testnet.blockscope.net:11444"                 = true
+"https://walrus-publish-testnet.chainode.tech:9003"           = true
+"https://walrus-testnet-publisher.starduststaking.com:11445"  = true
+"http://walrus-publisher-testnet.overclock.run:9001"          = true
+"http://walrus-testnet-publisher.everstake.one:9001"          = true
+"http://walrus.testnet.pops.one:9001"                         = true
+"http://ivory-dakar-e5812.walrus.bdnodes.net:9001"            = true
+"http://publisher.testnet.sui.rpcpool.com:9001"               = true
+"http://walrus.krates.ai:9001"                                = true
+"http://walrus-publisher-testnet.latitude-sui.com:9001"       = true
+"http://walrus-tn.juicystake.io:9090"                         = true
+"http://walrus-testnet.stakingdefenseleague.com:9001"         = true
+"http://walrus.sui.thepassivetrust.com:9001"                  = true
+"http://walrus.globalstake.io:9001"                           = true
+"http://walrus-testnet-publisher.natsai.xyz:9001"             = true
+"http://walrus-testnet.staking4all.org:9001"                  = true
+"http://93.115.27.108:9001"                                   = true
+"http://65.21.139.112:9001"                                   = true
+"http://92.42.106.241:9001"                                   = true
+"http://162.19.18.19:9001"                                    = true
+"https://walrus.testnet.publisher.stakepool.dev.br"           = true
+"https://publisher.walrus.banansen.dev"                       = true
+
+[metrics]
+
+[metrics.ping]
+period_ms = 10000
