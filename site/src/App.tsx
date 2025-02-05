@@ -8,9 +8,13 @@ import "react-toastify/dist/ReactToastify.css"
 import { ToastContainer } from "react-toastify"
 
 const LazyAggregatorsPage = lazy(() => import("./pages/AggregatorsPage"))
+const LazyPublishersPage = lazy(() => import("./pages/PublishersPage"))
 const LazyCustom404Page = lazy(() => import("./pages/Custom404"))
 
 const App: React.FC = () => {
+    
+    useEffect(() => {
+    }, [])
     useEffect(() => {
         try {
             amplitude.init(AMPLITUDE_API_KEY, {
@@ -20,6 +24,7 @@ const App: React.FC = () => {
         } catch (e) {
             console.error("Amplitude initialization failed:", e)
         }
+
     }, [])
     return (
         <BrowserRouter>
@@ -56,7 +61,7 @@ const App: React.FC = () => {
                     path="/publishers"
                     element={
                         <Suspense>
-                            <LazyAggregatorsPage />
+                            <LazyPublishersPage />
                         </Suspense>
                     }
                 />

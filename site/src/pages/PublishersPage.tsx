@@ -7,10 +7,10 @@ import Header from "@/components/Header.tsx"
 
 
 
-const AggregatorsPage: React.FC = () => {
-    const [aggregators, setAggregators] = useState<string[]>([])
+const PublishersPage: React.FC = () => {
+    const [publishers, setPublishers] = useState<string[]>([])
 
-    const listItems = aggregators.map((aggregator: string, index: number) => {
+    const listItems = publishers.map((aggregator: string, index: number) => {
         return <div key={aggregator}>{index + 1}. {aggregator}</div>
     })
 
@@ -18,7 +18,7 @@ const AggregatorsPage: React.FC = () => {
         try {
             const response = await fetch('https://raw.githubusercontent.com/MystenLabs/walrus-operators/refs/heads/main/operators.json')
             const data = await response.json()
-            setAggregators(Object.keys(data.aggregators))
+            setPublishers(Object.keys(data.publishers))
         } catch (error) {
             console.error('Error fetching operators:', error)
         }
@@ -44,7 +44,7 @@ const AggregatorsPage: React.FC = () => {
                                 WALRUS.
                             </span>
                             <span className="text-[#c684f6] text-3xl lg:text-[40px] xl:text-[54px] font-bold font-ppNeueBit">
-                                AGGREGATORS
+                                PUBLISHERS
                             </span>
                         </div>
                     </div>
@@ -64,4 +64,4 @@ const AggregatorsPage: React.FC = () => {
     )
 }
 
-export default AggregatorsPage
+export default PublishersPage
