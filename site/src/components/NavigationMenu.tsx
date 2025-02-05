@@ -5,19 +5,11 @@ import {
     NavigationMenuViewport,
 } from "@/components/ui/navigation-menu"
 import { Link, useLocation } from "react-router-dom"
-// import { useScrollSpy } from "../hooks/useScrollSpy"
-import * as amplitude from "@amplitude/analytics-browser"
 
 const NavigationMenuWalrus = () => {
     // const activeSection = useScrollSpy()
     const { pathname: locationPathname } = useLocation()
 
-    const scrollToSection = (sectionId: string) => {
-        const element = document.getElementById(sectionId)
-        if (element) {
-            element.scrollIntoView({ behavior: "smooth" })
-        }
-    }
 
     const unselectedColors = "text-white bg-primary_dark"
     const selectedColors = "text-primary_dark bg-primary_teal"
