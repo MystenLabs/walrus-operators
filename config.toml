@@ -38,8 +38,6 @@
 "https://walrus.testnet.aggregator.stakepool.dev.br"          = true
 "https://aggregator.walrus.banansen.dev"                      = true
 
-[default_urls.caches]
-
 [default_urls.publishers]
 "https://publisher.walrus-testnet.walrus.space"               = true
 "https://wal-publisher-testnet.staketab.org"                  = true
@@ -83,4 +81,25 @@
 [metrics]
 
 [metrics.ping]
-period_ms = 10000
+period_ms = 60000 # 1 minute
+timeout_ms = 10000 # 10 sec
+
+[metrics.read_store]
+
+# Timeout for every single entry is kind of worst case, but still:
+# (38 aggr + 38 publ) * (10 tiny + 120 medium + 240 large)sec = 9500 sec
+# Update: Observed around one & a half an hour for measuring all stores and reads
+period_ms = 7200000 # 2 hrs
+# If we assume only 1 publisher is publishing:
+# That would mean 12 publishes per epoch.
+# In order to have 38 blobs still stored, (for every aggregator to have a blob
+# to test against), we need 4 epochs. Better to err on the high side:
+store_epochs = 7 # Store blobs for 15 epochs to succesfully test reading later
+
+[metrics.read_store.sizes]
+# nano = { size = 1024, timeout_ms = 20000 } # 1 KB, 10 sec
+tiny = { size = 524288, timeout_ms = 40000 } # 512 KB, 40 sec 
+small = { size = 1048576, timeout_ms = 50000 } # 1 MB, 50 sec
+medium = { size = 9437184, timeout_ms = 60000 } # 9 MB, 1 min
+# large = { size = 1073741824, timeout_ms = 240000 } # 1 GB, 4 min
+# max = { size = 13958643712, timeout_ms = 1200000 } # 13 GB, 20 min
