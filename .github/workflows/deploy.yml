@@ -1,0 +1,31 @@
+name: Deploy Site
+
+on:
+    push:
+        branches:
+            - main # or your default branch
+    workflow_dispatch: # Allows manual triggering
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Download Warlus binary
+              run: |
+                  curl -L -o walrus https://storage.googleapis.com/mysten-walrus-binaries/walrus-testnet-latest-ubuntu-x86_64-generic
+                  chmod +x walrus
+
+            - name: Download Site-builder binary
+              run: |
+                  curl -L -o site-builder https://storage.googleapis.com/mysten-walrus-binaries/site-builder-testnet-latest-ubuntu-x86_64-generic
+                  chmod +x site-builder
+
+            - name: Deploy site
+              env:
+                  # Add any necessary environment variables
+                  DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+              run: |
+                  ./site-builder --config ./sites-config.yaml publish --epochs max ./dist/.
