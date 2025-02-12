@@ -11,7 +11,7 @@ const PublishersPage: React.FC = () => {
     const [publishers, setPublishers] = useState<string[]>([])
 
     const listItems = publishers.map((aggregator: string, index: number) => {
-        return <div key={aggregator}>{index + 1}. {aggregator}</div>
+        return <div className="mt-2" key={aggregator}>{index + 1}. {aggregator}</div>
     })
 
     const fetchOperators = async () => {
@@ -29,14 +29,14 @@ const PublishersPage: React.FC = () => {
 
     return (
         <section
-            id="home"
-            className="flex flex-col items-center bg-primary_dark md:p-6 p-3 font-ppNeueMontreal"
+            id="publishers"
+            className="flex flex-col h-[100vh] items-center bg-primary_dark p-3 font-ppNeueMontreal"
         >
-            <div className="sticky top-0 z-50 md:py-4 py-2">
+            <div className="sticky top-0 z-50 mb-2 md:py-4 py-2">
                 <Header/>
             </div>
             <div className="relative p-2 rounded-3xl overflow-hidden w-full flex items-center justify-center text-white border-2 border-primary_teal rounded-3xl max-w-[1300px] h-[90vh] md:h-[85vh]">
-                <div className="flex-col justify-center justify-between items-center gap-4 flex h-full py-2">
+                <div className="w-full flex-col justify-center justify-between items-center gap-4 flex h-full py-2">
                     <div className="flex-col justify-center items-center gap-4 flex">
                         <WalrusWalking className="w-[38px] lg:w-[50px] xl:w-[67px]" />
                         <div>
@@ -49,11 +49,11 @@ const PublishersPage: React.FC = () => {
                         </div>
                     </div>
                  
-                    <div className="overflow-y-auto overflow-x-auto text-nowrap pl-14 md:pl-0 text-left md:text-center text-[#f7f7f7] text-xl lg:text-xl xl:text-2xl font-normal font-ppMondwest leading-[30px]">
+                    <div className="w-full overflow-y-auto overflow-x-auto text-nowrap text-left md:text-center text-[#f7f7f7] text-xl lg:text-xl xl:text-2xl font-normal font-ppMondwest leading-[30px]">
                     {listItems}
                     </div>
                    
-                    <div className="absolute mt-[290px] w-[1200px] z-0 pointer-events-none">
+                    <div className="absolute bottom-0 w-[1200px] z-0 pointer-events-none">
                         {/* <div className="opacity-75 absolute inset-0 bg-gradient-to-t from-primary_dark via-transparent to-primary_dark mix-blend-overlay pointer-events-none" /> */}
                         {/* <Globe className="mix-blend-overlay" /> */}
                         <img src="/globe_big.png" alt="Globe" />
