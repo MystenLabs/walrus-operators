@@ -25,7 +25,7 @@ jobs:
 
       - name: Install pnpm
         run: |
-          wget -qO- https://get.pnpm.io/install.sh | ENV="$HOME/.shrc" SHELL="$(which sh)" sh -
+          npm install -g pnpm
 
       - name: Download Warlus binary
         run: |
