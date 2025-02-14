@@ -13,19 +13,56 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v4
 
+            - name: Install dependencies
+              run: |
+                  apt-get update
+                  apt-get install -y curl
+
+            - name: Install Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+
+
+            - name: Install pnpm
+              run: |
+                  curl -fsSL https://pnpm.io/install.sh | sh
+
+
+
             - name: Download Warlus binary
               run: |
                   curl -L -o walrus https://storage.googleapis.com/mysten-walrus-binaries/walrus-testnet-latest-ubuntu-x86_64-generic
                   chmod +x walrus
+
+            - name: Run Warlus binary
+              run: |
+                  walrus
 
             - name: Download Site-builder binary
               run: |
                   curl -L -o site-builder https://storage.googleapis.com/mysten-walrus-binaries/site-builder-testnet-latest-ubuntu-x86_64-generic
                   chmod +x site-builder
 
+            - name: Run Site-builder binary
+              run: |
+                  site-builder
+                
+            - name: Install dependencies
+              run: |
+                  cd site 
+
+            - name: Install dependencies
+              run: |
+                  pnpm install
+
+            - name: Build site
+              run: |
+                  pnpm run build
+
             - name: Deploy site
               env:
                   # Add any necessary environment variables
                   DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
               run: |
-                  ./site-builder --config ./sites-config.yaml publish --epochs max ./dist/.
+                  ./site-builder --config ./site/sites-config.yaml publish --epochs 180 ./site/dist/.
