@@ -32,8 +32,9 @@ jobs:
 
             - name: Download Warlus binary
               run: |
-                  curl -L -o walrus https://storage.googleapis.com/mysten-walrus-binaries/walrus-testnet-latest-ubuntu-x86_64-generic
-                  chmod +x walrus
+                  curl -L -o walrus https://storage.googleapis.com/mysten-walrus-binaries/walrus-testnet-latest-ubuntu-x86_64
+                  mv walrus /usr/local/bin/
+                  chmod +x /usr/local/bin/walrus
 
             - name: Run Warlus binary
               run: |
@@ -41,8 +42,9 @@ jobs:
 
             - name: Download Site-builder binary
               run: |
-                  curl -L -o site-builder https://storage.googleapis.com/mysten-walrus-binaries/site-builder-testnet-latest-ubuntu-x86_64-generic
-                  chmod +x site-builder
+                  curl -L -o site-builder https://storage.googleapis.com/mysten-walrus-binaries/site-builder-testnet-latest-ubuntu-x86_64
+                  mv site-builder /usr/local/bin/
+                  chmod +x /usr/local/bin/site-builder
 
             - name: Run Site-builder binary
               run: |
