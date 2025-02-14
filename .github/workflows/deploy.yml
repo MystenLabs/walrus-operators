@@ -25,7 +25,7 @@ jobs:
 
       - name: Install pnpm
         run: |
-          curl -fsSL https://get.pnpm.io/install.sh | sh -
+          wget -qO- https://get.pnpm.io/install.sh | ENV="$HOME/.bashrc" SHELL="$(which bash)" bash -
 
       - name: Download Warlus binary
         run: |
@@ -56,4 +56,4 @@ jobs:
           # Add any necessary environment variables
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         run: |
-          ./site-builder --config ./site/sites-config.yaml publish --epochs 180 ./site/dist/.
+          ./site-builder --config ./sites-config.yaml publish --epochs 180 ./dist/.
