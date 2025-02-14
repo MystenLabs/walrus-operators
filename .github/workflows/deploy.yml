@@ -1,70 +1,59 @@
 name: Deploy Site
 
 on:
-    push:
-        branches:
-            - main # or your default branch
-    workflow_dispatch: # Allows manual triggering
+  push:
+    branches:
+      - main # or your default branch
+  workflow_dispatch: # Allows manual triggering
 
 jobs:
-    deploy:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v4
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-            - name: Install dependencies
-              run: |
-                  sudo apt-get update
-                  sudo apt-get install -y curl
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl
 
-            - name: Install Node.js
-              uses: actions/setup-node@v4
-              with:
-                  node-version: 20
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
+      - name: Install pnpm
+        run: |
+          curl -fsSL https://pnpm.io/install.sh | sh
 
-            - name: Install pnpm
-              run: |
-                  curl -fsSL https://pnpm.io/install.sh | sh
+      - name: Download Warlus binary
+        run: |
+          curl -L -o walrus https://storage.googleapis.com/mysten-walrus-binaries/walrus-testnet-latest-ubuntu-x86_64
+          mv walrus /usr/local/bin/
+          chmod +x /usr/local/bin/walrus
 
+      - name: Download Site-builder binary
+        run: |
+          curl -L -o site-builder https://storage.googleapis.com/mysten-walrus-binaries/site-builder-testnet-latest-ubuntu-x86_64
+          mv site-builder /usr/local/bin/
+          chmod +x /usr/local/bin/site-builder
 
+      - name: Install dependencies
+        run: |
+          cd site
 
-            - name: Download Warlus binary
-              run: |
-                  curl -L -o walrus https://storage.googleapis.com/mysten-walrus-binaries/walrus-testnet-latest-ubuntu-x86_64
-                  mv walrus /usr/local/bin/
-                  chmod +x /usr/local/bin/walrus
+      - name: Install dependencies
+        run: |
+          pnpm install
 
-            - name: Run Warlus binary
-              run: |
-                  walrus
+      - name: Build site
+        run: |
+          pnpm run build
 
-            - name: Download Site-builder binary
-              run: |
-                  curl -L -o site-builder https://storage.googleapis.com/mysten-walrus-binaries/site-builder-testnet-latest-ubuntu-x86_64
-                  mv site-builder /usr/local/bin/
-                  chmod +x /usr/local/bin/site-builder
-
-            - name: Run Site-builder binary
-              run: |
-                  site-builder
-                
-            - name: Install dependencies
-              run: |
-                  cd site 
-
-            - name: Install dependencies
-              run: |
-                  pnpm install
-
-            - name: Build site
-              run: |
-                  pnpm run build
-
-            - name: Deploy site
-              env:
-                  # Add any necessary environment variables
-                  DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-              run: |
-                  ./site-builder --config ./site/sites-config.yaml publish --epochs 180 ./site/dist/.
+      - name: Deploy site
+        env:
+          # Add any necessary environment variables
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        run: |
+          ./site-builder --config ./site/sites-config.yaml publish --epochs 180 ./site/dist/.
