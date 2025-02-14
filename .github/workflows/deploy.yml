@@ -54,4 +54,4 @@ jobs:
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         working-directory: ./site
         run: |
-          ./site-builder --config ./sites-config.yaml publish --epochs 180 ./dist/.
+          site-builder --config ./sites-config.yaml publish --epochs 180 ./dist/.
