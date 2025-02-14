@@ -33,6 +33,10 @@ jobs:
           mv walrus /usr/local/bin/
           chmod +x /usr/local/bin/walrus
 
+      - name: Generate Warlus wallet
+        run: |
+          walrus generate-sui-wallet
+
       - name: Download Site-builder binary
         run: |
           curl -L -o site-builder https://storage.googleapis.com/mysten-walrus-binaries/site-builder-testnet-latest-ubuntu-x86_64
