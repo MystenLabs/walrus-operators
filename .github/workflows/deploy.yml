@@ -40,20 +40,18 @@ jobs:
           chmod +x /usr/local/bin/site-builder
 
       - name: Install dependencies
-        run: |
-          cd site
-
-      - name: Install dependencies
+        working-directory: ./site
         run: |
           pnpm install
 
       - name: Build site
+        working-directory: ./site
         run: |
           pnpm run build
 
       - name: Deploy site
         env:
-          # Add any necessary environment variables
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        working-directory: ./site
         run: |
           ./site-builder --config ./sites-config.yaml publish --epochs 180 ./dist/.
