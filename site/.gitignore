@@ -50,6 +50,3 @@ dist-ssr
 *.sln
 *.sw?
 
-# Walrus config
-sites-config.yaml
-
