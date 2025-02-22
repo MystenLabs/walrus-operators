@@ -1,62 +1,36 @@
-name: Deploy Site
-
+name: "Ship walrus site (NOTE: walrus blobs will expire after max number of epochs)"
 on:
   push:
     branches:
-      - main # or your default branch
-  workflow_dispatch: # Allows manual triggering
+      - main
 
 jobs:
-  deploy:
+  ship:
     runs-on: ubuntu-latest
+    env:
+      NO_COLOR: 1
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y curl
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
+      - name: Checkout to the walrus site repo
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # pin@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2 # pin@v4
         with:
-          node-version: 20
-
-      - name: Install pnpm
-        run: |
-          npm install -g pnpm
-
-      - name: Download Warlus binary
-        run: |
-          curl -L -o walrus https://storage.googleapis.com/mysten-walrus-binaries/walrus-testnet-latest-ubuntu-x86_64
-          mv walrus /usr/local/bin/
-          chmod +x /usr/local/bin/walrus
-
-      - name: Generate Warlus wallet
-        run: |
-          walrus generate-sui-wallet
-
-      - name: Download Site-builder binary
-        run: |
-          curl -L -o site-builder https://storage.googleapis.com/mysten-walrus-binaries/site-builder-testnet-latest-ubuntu-x86_64
-          mv site-builder /usr/local/bin/
-          chmod +x /usr/local/bin/site-builder
-
+          version: 9.9.0
+      - name: Setup node
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # pin@v4
+        with:
+          node-version: 22
+          cache: "pnpm"
       - name: Install dependencies
-        working-directory: ./site
-        run: |
-          pnpm install
-
-      - name: Build site
-        working-directory: ./site
-        run: |
-          pnpm run build
-
-      - name: Deploy site
-        env:
-          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-        working-directory: ./site
-        run: |
-          ls -la
-          site-builder --config ./sites-config.yaml publish --epochs 180 ./dist/.
+        run: pnpm install --frozen-lockfile
+      - name: Build
+        run: pnpm build
+      - name: Setup Walrus
+        uses: "MystenLabs/walrus-docs/.github/actions/set-up-walrus@0b4c86f621ace9e1b8dc4be8ada251a18fee3086" # pin@main
+        with:
+          SUI_ADDRESS: "${{ vars.SUI_ADDRESS }}"
+          SUI_KEYSTORE: "${{ secrets.SUI_KEYSTORE }}"
+          WALRUS_CONFIG: "${{ vars.WALRUS_CONFIG }}"
+      - name: "Deploy Walrus Operators"
+        run: >
+          RUST_LOG=site_builder=debug,walrus=debug,info site-builder --config sites-config.yaml update dist/ ${{ vars.WALRUS_SITE_OBJECT }} --epochs=max --force
