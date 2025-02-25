@@ -54,14 +54,6 @@ module.exports = {
                 }
             },
             fontFamily: {
-                ppMondwest: [
-                    'PPMondwest-Regular',
-                    'sans-serif'
-                ],
-                ppMondwestBold: [
-                    'PPMondwest-Bold',
-                    'sans-serif'
-                ],
                 ppNeueBit: [
                     'PPNeueBit-Regular',
                     'sans-serif'

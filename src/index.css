@@ -29,24 +29,6 @@
 }
 
 @font-face {
-    font-family: "PPMondwest-Regular";
-    src:
-        url("/src/fonts/PPMondwest-Regular.woff2") format("woff2"),
-        url("/src/fonts/PPMondwest-Regular.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "PPMondwest-Bold";
-    src:
-        url("/src/fonts/PPMondwest-Bold.woff2") format("woff2"),
-        url("/src/fonts/PPMondwest-Bold.woff2") format("woff");
-    font-weight: bold;
-    font-style: normal;
-}
-
-@font-face {
     font-family: "PPNeueBit-Regular";
     src:
         url("/src/fonts/PPNeueBit-Regular.woff2") format("woff2"),

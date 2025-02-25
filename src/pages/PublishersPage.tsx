@@ -49,7 +49,7 @@ const PublishersPage: React.FC = () => {
                         </div>
                     </div>
                  
-                    <div className="w-full overflow-y-auto overflow-x-auto text-nowrap text-left md:text-center text-[#f7f7f7] text-xl lg:text-xl xl:text-2xl font-normal font-ppMondwest leading-[30px]">
+                    <div className="w-full overflow-y-auto overflow-x-auto text-nowrap text-left md:text-center text-[#f7f7f7] text-xl lg:text-xl xl:text-2xl font-normal font-ppNeueBitBold leading-[30px]">
                     {listItems}
                     </div>
                    
