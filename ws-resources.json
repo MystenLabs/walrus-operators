@@ -10,7 +10,7 @@
     }
   },
   "routes": {
-    "/*": "/index.html",
-    "/operators": "/operators.json"
+    "/operators": "/operators.json",
+    "/*": "/index.html"
   }
 }
