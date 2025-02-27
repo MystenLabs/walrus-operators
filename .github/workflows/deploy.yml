@@ -1,4 +1,4 @@
-name: "Ship walrus site (NOTE: walrus blobs will expire after max number of epochs)"
+name: "Deploys Walrus Operators site and list of operators"
 on:
   push:
     branches:
