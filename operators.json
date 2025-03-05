@@ -1,15 +1,25 @@
 {
     "aggregators": {
         "https://aggregator.walrus-testnet.walrus.space": {},
-        "https://wal-aggregator-testnet.staketab.org": { "cache": true },
+        "https://wal-aggregator-testnet.staketab.org": {
+            "cache": true
+        },
         "https://walrus-testnet-aggregator.bartestnet.com": {},
         "https://walrus-testnet.blockscope.net": {},
-        "https://walrus-testnet-aggregator.nodes.guru": { "cache": true },
+        "https://walrus-testnet-aggregator.nodes.guru": {
+            "cache": true
+        },
         "https://walrus-cache-testnet.overclock.run": {},
         "https://walrus-testnet-aggregator.stakin-nodes.com": {},
-        "https://testnet-aggregator-walrus.kiliglab.io": { "cache": true },
-        "https://walrus-cache-testnet.latitude-sui.com": { "cache": true },
-        "https://walrus-testnet-aggregator.nodeinfra.com": { "cache": true },
+        "https://testnet-aggregator-walrus.kiliglab.io": {
+            "cache": true
+        },
+        "https://walrus-cache-testnet.latitude-sui.com": {
+            "cache": true
+        },
+        "https://walrus-testnet-aggregator.nodeinfra.com": {
+            "cache": true
+        },
         "https://walrus-testnet.stakingdefenseleague.com": {},
         "https://walrus-aggregator.rubynodes.io": {},
         "https://walrus-testnet-aggregator.brightlystake.com": {},
@@ -18,18 +28,28 @@
         "https://walrus-testnet-aggregator.stakecraft.com": {},
         "https://agg.test.walrus.eosusa.io": {},
         "https://walrus-agg.testnet.obelisk.sh": {},
-        "https://sui-walrus-testnet.bwarelabs.com/aggregator": { "cache": true },
+        "https://sui-walrus-testnet.bwarelabs.com/aggregator": {
+            "cache": true
+        },
         "https://walrus-testnet.chainbase.online/aggregator": {},
-        "https://walrus-tn.juicystake.io:9443": { "cache": true },
+        "https://walrus-tn.juicystake.io:9443": {
+            "cache": true
+        },
         "https://walrus-agg-testnet.chainode.tech:9002": {},
-        "https://walrus-testnet-aggregator.starduststaking.com:11444": { "cache": false },
-        "http://walrus-testnet-aggregator.everstake.one:9000": { "cache": true },
+        "https://walrus-testnet-aggregator.starduststaking.com:11444": {
+            "cache": false
+        },
+        "http://walrus-testnet-aggregator.everstake.one:9000": {
+            "cache": true
+        },
         "http://walrus.testnet.pops.one:9000": {},
         "http://scarlet-brussels-376c2.walrus.bdnodes.net:9000": {},
         "http://aggregator.testnet.sui.rpcpool.com:9000": {},
         "http://walrus.krates.ai:9000": {},
         "https://walrus.sui.thepassivetrust.com": {},
-        "http://walrus.globalstake.io:9000": { "cache": true },
+        "http://walrus.globalstake.io:9000": {
+            "cache": true
+        },
         "http://walrus-testnet-aggregator.natsai.xyz:9000": {},
         "http://walrus-testnet.staking4all.org:9000": {},
         "http://93.115.27.108:9000": {},
@@ -37,12 +57,39 @@
         "http://92.42.106.241:9000": {},
         "http://162.19.18.19:9000": {},
         "https://walrus.testnet.aggregator.stakepool.dev.br": {},
-        "https://aggregator.walrus.banansen.dev": {}
+        "https://aggregator.walrus.banansen.dev": {},
+        "https://walrus-testnet-aggregator.redundex.com": {},
+        "https://aggregator.testnet.walrus.mirai.cloud": {},
+        "https://walrus-test-aggregator.thepassivetrust.com": {},
+        "https://testnet.aggregator.walrus.silentvalidator.com": {},
+        "https://testnet-aggregator.walrus.graphyte.dev": {},
+        "https://walrus-testnet-aggregator.imperator.co": {},
+        "https://walrus-testnet-aggregator.unemployedstake.co.uk": {},
+        "https://aggregator.walrus-01.tududes.com": {},
+        "https://walrus-aggregator-testnet.n1stake.com": {},
+        "https://suiftly-testnet-agg.mhax.io": {},
+        "https://walrus-testnet-aggregator.trusted-point.com": {},
+        "https://walrus-testnet-aggregator.veera.com": {},
+        "https://aggregator.testnet.walrus.atalma.io": {},
+        "https://153-gb3-val-walrus-aggregator.stakesquid.com": {},
+        "https://walrus-aggregator-testnet.cetus.zone": {},
+        "http://walrus-testnet.rpc101.org:9000": {},
+        "http://walrus-aggregator.stakeme.pro:9000": {},
+        "http://walrus-storage.testnet.nelrann.org:9000": {},
+        "http://walrus-testnet.senseinode.com:9000": {},
+        "http://walrus-testnet.equinoxdao.xyz:9000": {},
+        "https://walrus-testnet-aggregator.stakely.io": {},
+        "https://walrus-testnet-aggregator.talentum.id": {},
+        "http://37.27.230.228:9000": {},
+        "https://walrus-testnet-aggregator.luckyresearch.org": {},
+        "http://walrus-testnet.suicore.com:9000": {},
+        "https://walrus-testnet.validators.services.kyve.network/aggregate": {},
+        "https://walrus-aggregator-testnet.suisec.tech": {}
     },
     "publishers": {
         "https://publisher.walrus-testnet.walrus.space": {},
         "https://wal-publisher-testnet.staketab.org": {},
-        "https://walrus-testnet-publisher.bartestnet.com": {},
+        "https://walrus-testnet-publisher.redundex.com": {},
         "https://walrus-testnet-publisher.nodes.guru": {},
         "https://walrus-testnet-publisher.stakin-nodes.com": {},
         "https://testnet-publisher-walrus.kiliglab.io": {},
@@ -50,7 +97,7 @@
         "https://walrus-publisher.rubynodes.io": {},
         "https://walrus-testnet-publisher.brightlystake.com": {},
         "https://walrus-testnet-publisher.nami.cloud": {},
-        "https://testnet.walrus-publisher.sm.xyz": {},
+        "https://publisher.testnet.walrus.mirai.cloud": {},
         "https://walrus-testnet-publisher.stakecraft.com": {},
         "https://pub.test.walrus.eosusa.io": {},
         "https://walrus-pub.testnet.obelisk.sh": {},
@@ -77,6 +124,33 @@
         "http://92.42.106.241:9001": {},
         "http://162.19.18.19:9001": {},
         "https://walrus.testnet.publisher.stakepool.dev.br": {},
-        "https://publisher.walrus.banansen.dev": {}
+        "https://publisher.walrus.banansen.dev": {},
+        "https://walrus-testnet-publisher.stakingdefenseleague.com": {},
+        "https://walrus-testnet.thepassivetrust.com": {},
+        "https://testnet.publisher.walrus.silentvalidator.com": {},
+        "https://testnet-publisher.walrus.graphyte.dev": {},
+        "https://walrus-testnet-publisher.imperator.co": {},
+        "https://walrus-testnet-publisher.unemployedstake.co.uk": {},
+        "https://publisher.walrus-01.tududes.com": {},
+        "https://walrus-publisher-testnet.n1stake.com": {},
+        "https://suiftly-testnet-pub.mhax.io": {},
+        "https://walrus-testnet-publisher.trusted-point.com": {},
+        "https://walrus-testnet-publisher.veera.com": {},
+        "https://publisher.testnet.walrus.atalma.io": {},
+        "https://153-gb3-val-walrus-publisher.stakesquid.com": {},
+        "https://walrus-testnet-publisher.starduststaking.com": {},
+        "https://walrus-testnet-publisher.everstake.one": {},
+        "http://walrus-publisher-testnet.cetus.zone:9001": {},
+        "http://walrus-publisher.stakeme.pro:9001": {},
+        "http://walrus-storage.testnet.nelrann.org:9001": {},
+        "http://walrus-testnet.senseinode.com:9001": {},
+        "http://walrus-testnet.equinoxdao.xyz:9001": {},
+        "https://walrus-testnet-publisher.stakely.io": {},
+        "https://walrus-testnet-publisher.talentum.id": {},
+        "http://37.27.230.228:9001": {},
+        "https://walrus-testnet-published.luckyresearch.org": {},
+        "http://walrus-testnet.suicore.com:9001": {},
+        "https://walrus-testnet.validators.services.kyve.network/publish": {},
+        "http://walrus-publisher-testnet.suisec.tech:9001": {}
     }
 }
