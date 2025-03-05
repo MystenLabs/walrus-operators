@@ -17,9 +17,6 @@ dependencies:
   clsx:
     specifier: ^2.1.1
     version: 2.1.1
-  lucide-react:
-    specifier: ^0.472.0
-    version: 0.472.0(react@18.3.1)
   react:
     specifier: ^18.3.1
     version: 18.3.1
@@ -29,9 +26,6 @@ dependencies:
   react-router-dom:
     specifier: ^7.1.1
     version: 7.1.1(react-dom@18.3.1)(react@18.3.1)
-  react-toastify:
-    specifier: ^11.0.3
-    version: 11.0.3(react-dom@18.3.1)(react@18.3.1)
   tailwind-merge:
     specifier: ^2.6.0
     version: 2.6.0
@@ -1945,14 +1939,6 @@ packages:
       yallist: 3.1.1
     dev: true
 
-  /lucide-react@0.472.0(react@18.3.1):
-    resolution: {integrity: sha512-wdJH3xJAMuelsCgSZLBGQunk20xwFSMsuY7R4lrbLd/QsEPf/n6EmbGUnvux7+OjDJC248Kuja+5gWGpC7f3SA==}
-    peerDependencies:
-      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
-    dependencies:
-      react: 18.3.1
-    dev: false
-
   /merge2@1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
@@ -2216,17 +2202,6 @@ packages:
       react-dom: 18.3.1(react@18.3.1)
       set-cookie-parser: 2.7.1
       turbo-stream: 2.4.0
-    dev: false
-
-  /react-toastify@11.0.3(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-cbPtHJPfc0sGqVwozBwaTrTu1ogB9+BLLjd4dDXd863qYLj7DGrQ2sg5RAChjFUB4yc3w8iXOtWcJqPK/6xqRQ==}
-    peerDependencies:
-      react: ^18 || ^19
-      react-dom: ^18 || ^19
-    dependencies:
-      clsx: 2.1.1
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
     dev: false
 
   /react@18.3.1:

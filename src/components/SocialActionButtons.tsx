@@ -2,9 +2,6 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import React, { useState } from "react"
-import { toast } from "react-toastify"
-import "react-toastify/dist/ReactToastify.css"
-
 interface SocialActionButtonProps {
     nftId?: string
     profileId?: string
@@ -27,7 +24,7 @@ const SocialActionButtons: React.FC<SocialActionButtonProps> = ({
 
     const handleCopyToClipboard = () => {
         navigator.clipboard.writeText(shareUrl)
-        toast.success("Copied to clipboard!")
+        // toast.success("Copied to clipboard!")
         setCopyState(true)
         setTimeout(() => setCopyState(false), 3000) // Reset after 3 seconds
     }
